@@ -1,0 +1,72 @@
+---
+import profile from "../images/profile.jpg";
+import resume from "../assets/resume.pdf";
+---
+
+<div class="bg-[#2b2b2b]" id="aboutMe">
+  <div class="flex flex-row px-10 py-20">
+    <!-- profile image  -->
+    <div class="basis-1/4 flex justify-center items-center">
+      <img
+        src={profile}
+        class="rounded-full object-cover h-32 w-32 hover:scale-110 transition ease-in-out duration-300"
+        alt=""
+      />
+    </div>
+    <!-- content  -->
+    <div class="basis-3/4 flex flex-col justify-start">
+      <!-- about me  -->
+      <div class="text-2xl text-white font-bold">About Me</div>
+      <div class="text-[#7a7a7a] text-base max-w-4xl leading-8">
+        I am an outgoing and highly motivated young professional, looking to be
+        involved in a creative endeavor. I have strong knowledge in working with
+        various technologies like React.js, AngularJS, Angular9, Postgres,
+        Node.js,Python and Java. Currently working as a Senior Software
+        Solutions Engineer at Trinity LifeSciences.
+      </div>
+      <!-- contact and resume  -->
+      <div class="flex flex-row mt-10">
+        <!-- contact details  -->
+        <div class="basis-1/4 flex flex-col">
+          <div class="text-white text-2xl font-bold">Contact Details</div>
+          <!-- address  -->
+          <div class="text-[#7a7a7a] text-base leading-8 mt-2">
+            Stillwater <br />
+            Oklahoma, 74074 <br />
+            United States of America <br />
+            <span
+              class="text-white hover:text-blue-500 transition-colors ease-in-out"
+            >
+              <a href="">+1 929-240-5612</a>
+            </span>
+            <br />
+            <span
+              class="text-white hover:text-blue-500 transition-colors ease-in-out"
+            >
+              <a href=""> arun.manohar@nyu.edu</a>
+            </span>
+          </div>
+        </div>
+        <!-- download resume button  -->
+        <a href={resume} download="ArunManoharManoharanResume.pdf">
+          <div class="basic-1/4 flex flex-col justify-center group">
+            <div
+              class="flex flex-row space-x-4 bg-[#444] h-20 w-64 p-3 m-5 justify-center items-center transition group-hover:bg-white"
+            >
+                <!-- download icon  -->
+              <i
+                class="fa-solid fa-download fill-current text-white text-md group-hover:text-blue-500 transition"
+              ></i>
+              <!-- content  -->
+              <div
+                class="text-white font-bold text-md group-hover:text-blue-500 transition"
+              >
+                Download Resume
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
