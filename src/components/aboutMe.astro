@@ -4,7 +4,7 @@ import resume from "../assets/resume.pdf";
 ---
 
 <div class="bg-[#2b2b2b]" id="aboutMe">
-  <div class="flex flex-row px-10 py-20">
+  <div class="flex flex-col md:flex-row px-10 py-20">
     <!-- profile image  -->
     <div class="basis-1/4 flex justify-center items-center">
       <img
@@ -16,8 +16,8 @@ import resume from "../assets/resume.pdf";
     <!-- content  -->
     <div class="basis-3/4 flex flex-col justify-start">
       <!-- about me  -->
-      <div class="text-2xl text-white font-bold">About Me</div>
-      <div class="text-[#7a7a7a] text-base max-w-4xl leading-8">
+      <div class="text-xl md:text-2xl text-white font-bold">About Me</div>
+      <div class="text-[#7a7a7a] text-base max-w-4xl  leading-6 md:leading-8">
         I am an outgoing and highly motivated young professional, looking to be
         involved in a creative endeavor. I have strong knowledge in working with
         various technologies like React.js, AngularJS, Angular9, Postgres,
@@ -25,9 +25,9 @@ import resume from "../assets/resume.pdf";
         Solutions Engineer at Trinity LifeSciences.
       </div>
       <!-- contact and resume  -->
-      <div class="flex flex-row mt-10">
+      <div class="flex flex-col md:flex-row mt-10">
         <!-- contact details  -->
-        <div class="basis-1/4 flex flex-col">
+        <div class="md:basis-1/4 flex flex-col">
           <div class="text-white text-2xl font-bold">Contact Details</div>
           <!-- address  -->
           <div class="text-[#7a7a7a] text-base leading-8 mt-2">
@@ -49,7 +49,7 @@ import resume from "../assets/resume.pdf";
         </div>
         <!-- download resume button  -->
         <a href={resume} download="ArunManoharManoharanResume.pdf">
-          <div class="basic-1/4 flex flex-col justify-center group">
+          <div class="md:basic-1/4 flex flex-col justify-center group">
             <div
               class="flex flex-row space-x-4 bg-[#444] h-20 w-64 p-3 m-5 justify-center items-center transition group-hover:bg-white"
             >
