@@ -2,27 +2,42 @@
 import SmoothScroll from "./smoothScroll.astro";
 const firstName = "Arun Manohar";
 const lastName = "Manoharan";
-const icons = ["fa-solid fa-phone", "fa-solid fa-envelope", "fa-brands fa-linkedin", "fa-brands fa-github",];
+const icons = [
+  "fa-solid fa-phone",
+  "fa-solid fa-envelope",
+  "fa-brands fa-linkedin",
+  "fa-brands fa-github",
+];
 ---
 
 <div
-  class="flex flex-col justify-center items-center gap-5 h-screen space-y-10 bg-[#161415]"
+  class="flex flex-col justify-center items-center gap-5 h-screen space-y-10 pt-8 px-6 bg-[#161415]"
 >
-  <div
-    class="text text-white hover:text-blue-500 text-8xl font-bold antialiased transition hover:-translate-y-4 hover:scale-110 ease-in-out delay-150 duration-200"
-  >
-    {firstName}
+  <!-- name  -->
+  <div class="flex flex-col justify-center items-center group">
+    <div
+      class="text text-white group-hover:text-blue-500 text-5xl md:text-8xl font-bold antialiased transition group-hover:-translate-y-4 group-hover:scale-110 ease-in-out delay-150 duration-200"
+    >
+      {firstName}
+    </div>
+    <div
+      class="text text-white group-hover:text-blue-500 text-5xl md:text-8xl font-bold antialiased transition group-hover:-translate-y-4 group-hover:scale-110 ease-in-out delay-150 duration-200"
+    >
     {lastName}
+    </div>
   </div>
+  <!-- social icons  -->
   <div class="flex flex-row space-x-10 align-baseline">
     {
       icons.map((item) => (
-        <a href="#"> <i
-          class={
-            item +
-            " fill-current text-white text-4xl hover:text-blue-500 transition hover:translate-y-2 hover:scal"
-          }
-        />
+        <a href="#">
+          {" "}
+          <i
+            class={
+              item +
+              " fill-current text-white text-2xl md:text-4xl hover:text-blue-500 transition hover:translate-y-2 hover:scal"
+            }
+          />
         </a>
       ))
     }
