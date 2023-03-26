@@ -35,7 +35,7 @@ const data = await response.json();
 		<Education education={data["education"]}/>
 		<Skill skills={data["skills"]} />
 		<Projects projects={data["publications"]} />
-		<References refsList={data["references"]} client:load/>
+		<References refsList={data["references"]} client:visible/>
 		<Footer />
 	</body>
 </html>
