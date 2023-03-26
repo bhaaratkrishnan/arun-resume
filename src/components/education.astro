@@ -1,5 +1,5 @@
 ---
-const { work } = Astro.props;
+const { education } = Astro.props;
 import DateFormat from "../utils/dateFormat.astro";
 ---
 
@@ -9,24 +9,22 @@ import DateFormat from "../utils/dateFormat.astro";
     <p
       class="text-black font-semibold text-2xl underline underline-offset-8 decoration-4 tracking-wider decoration-blue-500 uppercase"
     >
-      work
+      education
     </p>
   </div>
   <!-- companies -->
   <div class="basis-1/2 mb-4 flex flex-col justify-start items-start">
-    {work.map((item) => (
+    {education.map((item) => (
         <div class="flex flex-col space-y-2  group md:hover:scale-110 ease-in-out m-5 transition">
-             <!-- company name -->
+             <!-- institution name -->
             <div class="text-3xl font-bold transition ease-in-out md:group-hover:text-blue-500">
-              <a href={item["website"]} target="_blank">
-                {item["company"]}
-                </a> 
+                {item["institution"]}
             </div>
-            <!-- position and start and end date -->
+            <!-- course and start and end date -->
             <div class="flex flex-col md:flex-row">
-                <div class="text-gray-500 text-sm font-light">{item["position"]}</div>
+                <div class="text-gray-500 text-sm font-light">{item["area"]}</div>
                 <div class="hidden md:block text-base text-gray-500 font-semibold mx-2">•</div>
-                <div class="text-gray-500 text-sm font-light">{item["location"]}</div>
+                <div class="text-gray-500 text-sm font-light">{item["summary"]}</div>
                 <div class="hidden md:block text-base text-gray-500 font-semibold mx-2">•</div>
                 <div class="text-gray-500 text-sm font-light flex flex-row">
                   <DateFormat date={item["startDate"]}/>
@@ -34,22 +32,8 @@ import DateFormat from "../utils/dateFormat.astro";
                   <DateFormat date={item["endDate"]}/>
                 </div>
             </div>
-            <!-- Description -->
-            <div class="text-gray-500 text-base tracking-wide font-light leading-6 md:leading-8">
-              {item["description"]}
-            </div>
-            <!-- roles -->
-            <ul class="list-disc md:group-hover:marker:text-blue-500 
-            list-inside">
-              {item["highlights"].map((highlight) => (
-                <li class="text text-base 
-                font-light antialiased 
-                text-gray-500 md:tracking-wide my-1">
-                  {highlight}
-                </li>
-              ))}
-            </ul>
         </div>
     ))}
   </div>
 </div>
+

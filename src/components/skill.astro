@@ -1,0 +1,42 @@
+---
+const { skills } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row space-y-5 md:space-y-0 mx-5 my-8">
+  <!-- skill title  -->
+  <div class="basis-1/4 group flex justify-center">
+    <div
+      class="text-black font-semibold text-2xl underline underline-offset-8 decoration-4 tracking-wider decoration-blue-500 uppercase"
+    >
+      skills
+    </div>
+  </div>
+  <div class="basis-1/2 flex flex-col justify-start space-y-6 m-5">
+    <!-- title and description -->
+    <div class="text-3xl font-semibold md:hover:text-blue-500 transition ease-in-out hover:scale-110 delay-100">Programming Languages</div>
+    <div class="font-light text-gray-500 text-base leading-8 tracking-wide">
+      Worked primarily with JavaScript and its related frameworks like React.js,
+      Angular, AngularJS and Node.js <br />
+      Interested in functional programming and serverless architectures, exploring
+      with new JavaScript frameworks respectively.
+    </div>
+    <div class="flex flex-col space-y-12">
+      {
+        skills.map((skill) => (
+          <div
+            class="w-3/4 h-10 bg-gray-300 rounded-sm group hover:scale-105 transition ease-in-out 
+          "
+          >
+            <div
+              class="bg-gray-800 text-lg font-bold uppercase text-white text-start h-10 p-2 
+              rounded-sm group-hover:bg-blue-500 transition ease-in-out"
+              style={"width: " + skill["level"] + "%"}
+            >
+              {skill["name"]}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

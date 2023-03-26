@@ -1,0 +1,15 @@
+---
+const icons = [
+  "fa-solid fa-phone",
+  "fa-solid fa-envelope",
+  "fa-brands fa-linkedin",
+  "fa-brands fa-github",
+];
+---
+<div class="bg-[#161415] flex flex-row py-16 px-24 justify-center items-center space-x-24">
+    {
+        icons.map((icon) => (
+            <i class={icon + " fill-current text-3xl text-white md:hover:text-blue-500 transition ease-in-out md:hover:scale-125"}></i>
+        ))
+    }
+</div>
