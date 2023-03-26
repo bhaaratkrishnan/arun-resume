@@ -1,10 +1,11 @@
 ---
 import profile from "../images/profile.jpg";
 import resume from "../assets/resume.pdf";
+const {summary, location, phone, emailId } = Astro.props;
 ---
 
 <div class="bg-[#2b2b2b]" id="aboutMe">
-  <div class="flex flex-col md:flex-row px-10 py-20">
+  <div class="flex flex-col md:flex-row px-10 py-20 h-screen md:h-auto">
     <!-- profile image  -->
     <div class="basis-1/4 flex justify-center items-center">
       <img
@@ -18,11 +19,7 @@ import resume from "../assets/resume.pdf";
       <!-- about me  -->
       <div class="text-xl md:text-2xl text-white font-bold">About Me</div>
       <div class="text-[#7a7a7a] text-base max-w-4xl  leading-6 md:leading-8">
-        I am an outgoing and highly motivated young professional, looking to be
-        involved in a creative endeavor. I have strong knowledge in working with
-        various technologies like React.js, AngularJS, Angular9, Postgres,
-        Node.js,Python and Java. Currently working as a Senior Software
-        Solutions Engineer at Trinity LifeSciences.
+        {summary}
       </div>
       <!-- contact and resume  -->
       <div class="flex flex-col md:flex-row mt-10">
@@ -31,19 +28,19 @@ import resume from "../assets/resume.pdf";
           <div class="text-white text-2xl font-bold">Contact Details</div>
           <!-- address  -->
           <div class="text-[#7a7a7a] text-base leading-8 mt-2">
-            Stillwater <br />
-            Oklahoma, 74074 <br />
-            United States of America <br />
+            {location["city"]} <br />
+            {location["region"]}, {location["postalCode"]} <br />
+            {location["countryCode"]} <br />
             <span
               class="text-white hover:text-blue-500 transition-colors ease-in-out"
             >
-              <a href="">+1 929-240-5612</a>
+              <a href="">{phone}</a>
             </span>
             <br />
             <span
               class="text-white hover:text-blue-500 transition-colors ease-in-out"
             >
-              <a href=""> arun.manohar@nyu.edu</a>
+              <a href="">{emailId}</a>
             </span>
           </div>
         </div>

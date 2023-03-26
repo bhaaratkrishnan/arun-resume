@@ -3,6 +3,8 @@ import NavBar from '../components/navbar.astro';
 import Hero from '../components/hero.astro';
 import AboutMe from '../components/aboutMe.astro';
 import Work from '../components/work.astro';
+const response = await fetch("https://arun-manohar-resume-api.herokuapp.com");
+const data = await response.json();
 ---
 
 <html lang="en">
@@ -15,9 +17,15 @@ import Work from '../components/work.astro';
 		<title>Arun Resume</title>
 	</head>
 	<body class="">
+		
 		<NavBar/>
 		<Hero/>
-		<AboutMe />
-		<!-- <Work /> -->
+		<AboutMe 
+		summary={data["basics"]["summary"]} 
+		location= {data["basics"]["location"]}
+		phone={data["basics"]["phone"]} 
+		emailId={data["basics"]["email"]}
+		/>
+		<Work work={data["work"]}/>
 	</body>
 </html>

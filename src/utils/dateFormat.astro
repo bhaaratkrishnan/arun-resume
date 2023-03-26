@@ -1,0 +1,19 @@
+---
+const { date } = Astro.props
+const formatDate = new Date(date);
+const months = [
+                "January", "February", 
+                "March", "April", "May", 
+                "June", "July", "August",
+                "September", "October", 
+                "November", "December"
+            ];
+const word_or_date = date === "Present";
+---
+{
+word_or_date ? <div>Present</div> :
+<div>
+
+    {months[formatDate.getMonth()]} {formatDate.getFullYear()}
+</div>
+}
