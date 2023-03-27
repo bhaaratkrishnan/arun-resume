@@ -18,7 +18,7 @@
   }
 </script>
 
-<div
+<div id="references"
   class="flex flex-col md:flex-row p-24 w-full bg-[#2b2b2b] md:space-x-40 justify-center items-center"
 >
   <!-- svelte-ignore a11y-click-events-have-key-events -->

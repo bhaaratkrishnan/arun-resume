@@ -1,28 +1,46 @@
 ---
 const navBarElements = [
-  "home",
-  "about",
-  "work",
-  "education",
-  "skills",
-  "projects",
-  "references",
+  { name: "home", href: "#home" },
+  { name: "about", href: "#aboutMe" },
+  { name: "work", href: "#work" },
+  { name: "education", href: "#education" },
+  { name: "skills", href: "#skills" },
+  { name: "projects", href: "#projects" },
+  { name: "references", href: "#references" },
 ];
 ---
+<script>
+  let preScrollPos = window.scrollY;
+  window.onscroll = function() {
+    var currentSrollPos = window.scrollY;
+    if(currentSrollPos < preScrollPos ){
+      document.getElementById("navBar").style.top = "0";
+      // document.getElementById("navBar").classList.remove("-top-50");      
+      // document.getElementById("navBar").classList.add("top-0");
+    }else{
+      document.getElementById("navBar").style.top = "-70px";
+      // document.getElementById("navBar").classList.remove("top-0");      
+      // document.getElementById("navBar").classList.add("-top-50");
+    }
+    preScrollPos = currentSrollPos;
 
-<div class="sticky top-0 z-50">
+  }
+</script>
+<div class="sticky z-50 ease-in-out" id="navBar" style="transition: top 0.3s; top: 0;">
   <div
     class="hidden lg:flex flex-row space-x-10 mx-auto justify-center items-center bg-zinc-700"
   >
     {
       navBarElements.map((item) => (
-        <div
-          class="uppercase text-md font-bold py-5 text-white 
+        <a href={item.href}>
+          <div
+            class="uppercase text-md font-bold py-5 text-white 
                 hover:text-[#157dec] transition ease-in-out  
                 hover:-translate-y-1  duration-300"
-        >
-          {item}
-        </div>
+          >
+            {item.name}
+          </div>
+        </a>
       ))
     }
   </div>
