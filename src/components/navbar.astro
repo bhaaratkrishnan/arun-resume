@@ -9,7 +9,7 @@ const navBarElements = [
   { name: "references", href: "#references" },
 ];
 ---
-<script>
+<!-- <script>
   let preScrollPos = window.scrollY;
   window.onscroll = function() {
     var currentSrollPos = window.scrollY;
@@ -18,8 +18,8 @@ const navBarElements = [
     }
     preScrollPos = currentSrollPos;
   }
-</script>
-<div class="sticky z-50 ease-in-out" id="navBar" style="transition: top 0.3s; top: 0;">
+</script> -->
+<div class="sticky z-50 top-0" id="navBar" style="">
   <div
     class="hidden lg:flex flex-row space-x-10 mx-auto justify-center items-center bg-zinc-700"
   >
@@ -27,7 +27,7 @@ const navBarElements = [
       navBarElements.map((item) => (
         <a href={item.href}>
           <div
-            class="uppercase text-md font-bold py-5 text-white 
+            class="uppercase text-md font-bold py-3 text-white 
                 hover:text-[#157dec] transition ease-in-out  
                 hover:-translate-y-1  duration-300"
           >
