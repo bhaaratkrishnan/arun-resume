@@ -1,5 +1,5 @@
 ---
-import profile from "../images/profile.jpg";
+import profile from "../images/profile.webp";
 import resume from "../assets/resume.pdf";
 const { summary, location, phone, emailId } = Astro.props;
 ---
@@ -12,7 +12,7 @@ const { summary, location, phone, emailId } = Astro.props;
   <div class="basis-1/4 flex justify-center items-center">
     <img
       src={profile}
-      class="rounded-full object-cover h-32 w-32 hover:scale-110 transition ease-in-out duration-300"
+      class="rounded-full object-cover h-32 w-32 hover:-translate-y-2 transition ease-in-out duration-300"
       alt=""
     />
   </div>
@@ -20,7 +20,7 @@ const { summary, location, phone, emailId } = Astro.props;
   <div class="basis-3/4 flex flex-col justify-start">
     <!-- about me  -->
     <div class="text-xl md:text-2xl text-white font-bold">About Me</div>
-    <div class="text-[#7a7a7a] text-base max-w-4xl leading-8">
+    <div class="text-gray-400 text-base max-w-4xl leading-8">
       {summary}
     </div>
     <!-- contact and resume  -->
@@ -29,7 +29,7 @@ const { summary, location, phone, emailId } = Astro.props;
       <div class="md:basis-1/4 flex flex-col">
         <div class="text-white text-2xl font-bold">Contact Details</div>
         <!-- address  -->
-        <div class="text-[#7a7a7a] text-base leading-8 mt-2">
+        <div class="text-gray-400 text-base leading-8 mt-2">
           {location["city"]}
           <br />
           {location["region"]}, {location["postalCode"]}
